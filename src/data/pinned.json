@@ -1,0 +1,22 @@
+[
+  {
+    "name": "trading-system",
+    "description": "A high-performance algorithmic trading system built in Rust for backtesting, live trading, and strategy optimization with Binance and MetaTrader 5 support, parallel execution, and advanced risk management.",
+    "url": "https://github.com/0xbarss/trading-system",
+    "branch": "main",
+    "stack": [
+      "Rust"
+    ],
+    "hasShowcase": false
+  },
+  {
+    "name": "simple-chess",
+    "description": "A desktop chess game built in Rust using the Macroquad graphics library. Features a visual 2D board, complete chess move validation, and interactive mouse controls.",
+    "url": "https://github.com/0xbarss/simple-chess",
+    "branch": "main",
+    "stack": [
+      "Rust"
+    ],
+    "hasShowcase": false
+  }
+]
