@@ -124,6 +124,7 @@ portfolio/
 │   └── main.jsx                # Application entry point
 ├── index.html                  # HTML entry point with Google Fonts
 ├── package.json                # Dependencies and scripts
+├── PORTFOLIO_GUIDE.md          # Guide on adding .portfolio showcases to projects
 └── vite.config.js              # Vite configuration with relative base path
 ```
 
@@ -136,8 +137,9 @@ portfolio/
    - Update your education, summary, and snapshot details in [`src/components/About.jsx`](file:///home/bariss/Masaüstü/portfolio/src/components/About.jsx).
    - Update your name and links in [`src/components/Sidebar.jsx`](file:///home/bariss/Masaüstü/portfolio/src/components/Sidebar.jsx).
 
-2. **Projects**:
+2. **Projects and Showcases**:
    - Edit [`src/data/pinned.json`](file:///home/bariss/Masaüstü/portfolio/src/data/pinned.json) with your own repositories.
+   - Read [`PORTFOLIO_GUIDE.md`](file:///home/bariss/Masaüstü/portfolio/PORTFOLIO_GUIDE.md) to learn how to add interactive showcases (`.portfolio/portfolio.json`) with diagrams, videos, and metrics to any repository.
    - In [`scripts/fetch-pinned.mjs`](file:///home/bariss/Masaüstü/portfolio/scripts/fetch-pinned.mjs), change the default username to your GitHub username.
    - To refresh pinned repositories automatically from GitHub's GraphQL API, run:
      ```bash
