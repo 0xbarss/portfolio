@@ -75,7 +75,7 @@ The project includes an automated deployment workflow at `.github/workflows/depl
 
 4. **Automatic Deployment**:
    - Once selected, the workflow triggers automatically on every push to `main`.
-   - The workflow also runs on a daily schedule to keep your pinned repositories synced.
+   - You can also trigger the deployment manually at any time via the "Run workflow" button in the Actions tab.
    - Within 1 to 2 minutes, your site will be live at `https://<username>.github.io/<your-repo-name>/` (or `https://<username>.github.io/` if using your root domain).
 
 ---

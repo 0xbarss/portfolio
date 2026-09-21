@@ -3,9 +3,6 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-  schedule:
-    # Re-run daily so pinned-repo changes on your profile sync automatically.
-    - cron: '0 3 * * *'
   workflow_dispatch: {}
 
 permissions:
