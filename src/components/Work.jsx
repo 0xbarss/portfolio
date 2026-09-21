@@ -1,10 +1,6 @@
-import { useState } from 'react'
 import pinned from '../data/pinned.json'
-import ProjectModal from './ProjectModal.jsx'
 
-export default function Work() {
-  const [active, setActive] = useState(null)
-
+export default function Work({ onSelectProject }) {
   if (!pinned || pinned.length === 0) {
     return null
   }
@@ -15,7 +11,7 @@ export default function Work() {
       <div className="section-body">
         <p>
           Featured projects demonstrating system design, concurrency, and application logic.
-          Click any project card to view its documentation and details:
+          Click any project card to explore its full architecture, diagrams, and documentation:
         </p>
       </div>
 
@@ -25,7 +21,8 @@ export default function Work() {
             key={p.name}
             type="button"
             className="project-card"
-            onClick={() => setActive(p)}
+            onClick={() => onSelectProject?.(p)}
+            aria-label={`View project details for ${p.name}`}
           >
             <div className="project-card-header">
               <div className="project-title-wrap">
@@ -66,10 +63,6 @@ export default function Work() {
           </button>
         ))}
       </div>
-
-      {active && (
-        <ProjectModal project={active} onClose={() => setActive(null)} />
-      )}
     </section>
   )
 }
