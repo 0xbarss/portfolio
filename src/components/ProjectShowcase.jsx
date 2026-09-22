@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { resolveMedia } from '../lib/github.js'
 
 function TextBlock({ body }) {
@@ -15,21 +15,122 @@ function ImageBlock({ src, caption, ctx }) {
 }
 
 function GalleryBlock({ images, ctx, onOpen }) {
+  const urls = images.map((src) => resolveMedia(src, ctx))
   return (
     <div className="block-gallery">
-      {images.map((src) => {
-        const url = resolveMedia(src, ctx)
-        return (
-          <button
-            key={src}
-            className="gallery-thumb"
-            onClick={() => onOpen(url)}
-            aria-label="Open image full size"
-          >
-            <img src={url} alt="" loading="lazy" />
-          </button>
-        )
-      })}
+      {urls.map((url, i) => (
+        <button
+          key={url}
+          className="gallery-thumb"
+          onClick={() => onOpen(urls, i)}
+          aria-label="Open image full size"
+        >
+          <img src={url} alt="" loading="lazy" />
+        </button>
+      ))}
+    </div>
+  )
+}
+
+function Lightbox({ images, index, onClose, onNavigate }) {
+  const [closing, setClosing] = useState(false)
+  const touchStart = useRef(null)
+  const hasMultiple = images.length > 1
+
+  const handleClose = useCallback(() => {
+    setClosing(true)
+    setTimeout(onClose, 160)
+  }, [onClose])
+
+  useEffect(() => {
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') handleClose()
+      else if (e.key === 'ArrowLeft' && hasMultiple) onNavigate(-1)
+      else if (e.key === 'ArrowRight' && hasMultiple) onNavigate(1)
+    }
+    window.addEventListener('keydown', onKeyDown)
+
+    return () => {
+      document.body.style.overflow = prevOverflow
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [handleClose, onNavigate, hasMultiple])
+
+  const handleTouchStart = (e) => {
+    const t = e.touches[0]
+    touchStart.current = { x: t.clientX, y: t.clientY }
+  }
+
+  const handleTouchEnd = (e) => {
+    if (!touchStart.current) return
+    const t = e.changedTouches[0]
+    const dx = t.clientX - touchStart.current.x
+    const dy = t.clientY - touchStart.current.y
+    touchStart.current = null
+
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)) {
+      if (hasMultiple) onNavigate(dx > 0 ? -1 : 1)
+    } else if (dy > 90 && Math.abs(dy) > Math.abs(dx)) {
+      handleClose()
+    }
+  }
+
+  return (
+    <div
+      className={`lightbox ${closing ? 'lightbox-closing' : ''}`}
+      onMouseDown={(e) => {
+        if (e.target === e.currentTarget) handleClose()
+      }}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
+      <button
+        type="button"
+        className="lightbox-close"
+        onClick={handleClose}
+        aria-label="Kapat"
+      >
+        ✕
+      </button>
+
+      {hasMultiple && (
+        <button
+          type="button"
+          className="lightbox-nav lightbox-prev"
+          onClick={(e) => {
+            e.stopPropagation()
+            onNavigate(-1)
+          }}
+          aria-label="Önceki görsel"
+        >
+          ‹
+        </button>
+      )}
+
+      <img key={index} className="lightbox-img" src={images[index]} alt="" />
+
+      {hasMultiple && (
+        <button
+          type="button"
+          className="lightbox-nav lightbox-next"
+          onClick={(e) => {
+            e.stopPropagation()
+            onNavigate(1)
+          }}
+          aria-label="Sonraki görsel"
+        >
+          ›
+        </button>
+      )}
+
+      {hasMultiple && (
+        <div className="lightbox-counter">
+          {index + 1} / {images.length}
+        </div>
+      )}
     </div>
   )
 }
@@ -57,7 +158,20 @@ function EmbedBlock({ url, label }) {
 }
 
 export default function ProjectShowcase({ manifest, ctx, onShowReadme }) {
-  const [lightbox, setLightbox] = useState(null)
+  const [lightbox, setLightbox] = useState(null) // { images, index } | null
+
+  const openLightbox = useCallback((images, index) => {
+    setLightbox({ images, index })
+  }, [])
+
+  const navigateLightbox = useCallback((delta) => {
+    setLightbox((prev) => {
+      if (!prev) return prev
+      const total = prev.images.length
+      const nextIndex = (prev.index + delta + total) % total
+      return { ...prev, index: nextIndex }
+    })
+  }, [])
 
   return (
     <div className="showcase">
@@ -88,7 +202,7 @@ export default function ProjectShowcase({ manifest, ctx, onShowReadme }) {
             return <ImageBlock key={i} {...block} ctx={ctx} />
           case 'gallery':
             return (
-              <GalleryBlock key={i} {...block} ctx={ctx} onOpen={setLightbox} />
+              <GalleryBlock key={i} {...block} ctx={ctx} onOpen={openLightbox} />
             )
           case 'video':
             return <VideoBlock key={i} {...block} ctx={ctx} />
@@ -114,9 +228,12 @@ export default function ProjectShowcase({ manifest, ctx, onShowReadme }) {
       </button>
 
       {lightbox && (
-        <div className="lightbox" onMouseDown={() => setLightbox(null)}>
-          <img src={lightbox} alt="" />
-        </div>
+        <Lightbox
+          images={lightbox.images}
+          index={lightbox.index}
+          onClose={() => setLightbox(null)}
+          onNavigate={navigateLightbox}
+        />
       )}
     </div>
   )

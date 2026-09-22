@@ -53,8 +53,10 @@ export default function App() {
   }, [])
 
   return (
-    <div className="layout">
-      <Sidebar activeProject={activeProject} onBack={handleBackToProjects} />
+    <div className={activeProject ? 'layout layout--no-sidebar' : 'layout'}>
+      {!activeProject && (
+        <Sidebar activeProject={activeProject} onBack={handleBackToProjects} />
+      )}
       <main className="main">
         {activeProject ? (
           <ProjectDetail

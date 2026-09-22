@@ -177,7 +177,7 @@ export default function ProjectDetail({ project, onBack, onSelectProject, allPro
           aria-label="Back to all projects"
         >
           <span className="back-arrow" aria-hidden="true">←</span>
-          <span>Back to all projects</span>
+          <span className="back-label">Back to all projects</span>
           <kbd className="key-hint">Esc</kbd>
         </button>
 
