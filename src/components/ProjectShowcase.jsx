@@ -5,10 +5,53 @@ function TextBlock({ body }) {
   return <p className="block-text">{body}</p>
 }
 
-function ImageBlock({ src, caption, ctx }) {
+function ShowcaseCover({ cover, coverAspectRatio, coverWidth, coverHeight, ctx }) {
+  const [loaded, setLoaded] = useState(false)
+  const coverSrc = typeof cover === 'object' ? cover.src : cover
+  const ratio =
+    (typeof cover === 'object'
+      ? cover.aspectRatio || (cover.width && cover.height ? `${cover.width} / ${cover.height}` : undefined)
+      : coverAspectRatio) || '1200 / 630'
+  const width = typeof cover === 'object' ? cover.width : coverWidth
+  const height = typeof cover === 'object' ? cover.height : coverHeight
+
+  return (
+    <div
+      className={`showcase-cover-wrapper ${loaded ? 'is-loaded' : ''}`}
+      style={{ aspectRatio: ratio }}
+    >
+      <img
+        className="showcase-cover"
+        src={resolveMedia(coverSrc, ctx)}
+        alt=""
+        loading="lazy"
+        width={width}
+        height={height}
+        onLoad={() => setLoaded(true)}
+      />
+    </div>
+  )
+}
+
+function ImageBlock({ src, caption, ctx, aspectRatio, width, height }) {
+  const [loaded, setLoaded] = useState(false)
+  const ratio = aspectRatio || (width && height ? `${width} / ${height}` : '16 / 10')
+
   return (
     <figure className="block-image">
-      <img src={resolveMedia(src, ctx)} alt={caption || ''} loading="lazy" />
+      <div
+        className={`image-wrapper ${loaded ? 'is-loaded' : ''}`}
+        style={{ aspectRatio: ratio }}
+      >
+        <img
+          src={resolveMedia(src, ctx)}
+          alt={caption || ''}
+          loading="lazy"
+          width={width}
+          height={height}
+          onLoad={() => setLoaded(true)}
+        />
+      </div>
       {caption && <figcaption>{caption}</figcaption>}
     </figure>
   )
@@ -176,11 +219,12 @@ export default function ProjectShowcase({ manifest, ctx, onShowReadme }) {
   return (
     <div className="showcase">
       {manifest.cover && (
-        <img
-          className="showcase-cover"
-          src={resolveMedia(manifest.cover, ctx)}
-          alt=""
-          loading="lazy"
+        <ShowcaseCover
+          cover={manifest.cover}
+          coverAspectRatio={manifest.coverAspectRatio}
+          coverWidth={manifest.coverWidth}
+          coverHeight={manifest.coverHeight}
+          ctx={ctx}
         />
       )}
 

@@ -1058,16 +1058,49 @@
   max-width: 52rem;
 }
 
-.showcase-cover {
+@keyframes showcase-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.showcase-cover-wrapper {
+  position: relative;
   width: 100%;
-  max-height: none;
-  object-fit: contain;
+  aspect-ratio: 1200 / 630;
   border-radius: 8px;
   border: 1px solid var(--line);
   margin-bottom: 2rem;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
   background: var(--paper-raised);
+  overflow: hidden;
+}
+
+.showcase-cover-wrapper:not(.is-loaded) {
+  background: linear-gradient(
+    90deg,
+    var(--paper-raised) 25%,
+    #e4e4e7 37%,
+    var(--paper-raised) 63%
+  );
+  background-size: 400% 100%;
+  animation: showcase-shimmer 1.8s ease-in-out infinite;
+}
+
+.showcase-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   display: block;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.showcase-cover-wrapper.is-loaded .showcase-cover {
+  opacity: 1;
 }
 
 .showcase-tagline {
@@ -1112,12 +1145,49 @@
   margin: 0 0 2rem;
 }
 
-.block-image img {
+.block-image .image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background: var(--paper-raised);
+  overflow: hidden;
+}
+
+.block-image .image-wrapper:not(.is-loaded) {
+  background: linear-gradient(
+    90deg,
+    var(--paper-raised) 25%,
+    #e4e4e7 37%,
+    var(--paper-raised) 63%
+  );
+  background-size: 400% 100%;
+  animation: showcase-shimmer 1.8s ease-in-out infinite;
+}
+
+.block-image .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.block-image .image-wrapper.is-loaded img {
+  opacity: 1;
+}
+
+/* Fallback for direct image if rendered without wrapper */
+.block-image > img {
   width: 100%;
   border-radius: 8px;
   border: 1px solid var(--line);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   display: block;
+  background: var(--paper-raised);
 }
 
 .block-image figcaption {
@@ -1501,5 +1571,7 @@
   border-radius: 6px;
   border: 1px solid var(--line);
   margin: 1rem 0;
+  background: var(--paper-raised);
+  display: block;
 }
 

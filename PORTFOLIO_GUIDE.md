@@ -50,7 +50,8 @@ The file `.portfolio/portfolio.json` defines your project showcase.
 | Field | Type | Description |
 | :--- | :--- | :--- |
 | `tagline` | `string` | A concise one-line summary displayed directly beneath the project title. |
-| `cover` | `string` | Relative path (e.g. `"cover.png"`) or absolute URL for the top showcase banner image. |
+| `cover` | `string` \| `object` | Relative path (e.g. `"cover.png"`), absolute URL, or object with `{ "src": "cover.png", "aspectRatio": "1200 / 630", "width": 1200, "height": 630 }`. |
+| `coverAspectRatio` | `string` | Optional aspect ratio for cover image (e.g. `"1200 / 630"`, `"16 / 9"`) to prevent layout shift. |
 | `highlights` | `string[]` | Bullet-point engineering metrics, benchmarks, or key architecture achievements. |
 | `links` | `object[]` | External links such as live demos, whitepapers, design docs, or blog posts. |
 | `blocks` | `object[]` | Ordered body content blocks rendered sequentially in the modal. |
@@ -72,13 +73,16 @@ Renders a paragraph of clean text explaining design decisions, challenges, or ar
 ```
 
 ### B. Image Block (`type: "image"`)
-Renders a full-width image with an optional caption. Ideal for architecture diagrams, data flow schemas, or system topology maps.
+Renders a full-width image with an optional caption. Set `aspectRatio` (or `width` and `height`) to reserve container layout space and prevent Cumulative Layout Shift (CLS) as images stream from GitHub.
 
 ```json
 {
   "type": "image",
   "src": "architecture.png",
-  "caption": "Figure 1: High-level event-driven architecture and worker thread topology"
+  "caption": "Figure 1: High-level event-driven architecture and worker thread topology",
+  "aspectRatio": "1100 / 640",
+  "width": 1100,
+  "height": 640
 }
 ```
 
