@@ -3,24 +3,24 @@
   "github": "0xbarss",
   "role": {
     "en": "Junior Software Engineer | Backend and Systems",
-    "tr": "Junior Yazılım Mühendisi | Backend ve Sistem"
+    "tr": "Junior Yazılım Mühendisi | Backend ve Sistem Programlama"
   },
   "headline": {
     "en": "I build the behind-the-scenes software that apps rely on: servers, databases, and fast data processing.",
-    "tr": "Uygulamaların arkasında çalışan yazılımları geliştiriyorum: sunucular, veritabanları ve hızlı veri işleme."
+    "tr": "Uygulamaların temelinde çalışan yazılımları geliştiriyorum: sunucular, veritabanları ve yüksek performanslı veri işleme sistemleri."
   },
   "summary": {
     "en": "Languages: TypeScript, C, Python, Rust. Focus: backend services, data processing, and systems programming.",
-    "tr": "Diller: TypeScript, C, Python, Rust. Odak: backend servisleri, veri işleme ve sistem programlama."
+    "tr": "Programlama dilleri: TypeScript, C, Python, Rust. Odak alanlarım: Backend servisleri, veri işleme ve sistem programlama."
   },
   "openTo": {
     "en": "Junior Backend and Systems Engineer roles",
-    "tr": "Junior Backend ve Sistem Mühendisliği pozisyonları"
+    "tr": "Junior Backend ve Sistem Mühendisliği pozisyonlarına açığım."
   },
   "location": "İzmir, Türkiye",
   "workMode": {
     "en": "Remote, hybrid, or on-site",
-    "tr": "Uzaktan, hibrit veya ofisten"
+    "tr": "Uzaktan, hibrit veya ofisten çalışma"
   },
   "availability": {
     "en": "",
@@ -47,32 +47,32 @@
   "about": [
     {
       "en": "I am a software engineer and a graduate of İzmir University of Economics. I focus on backend engineering: the servers, databases, and APIs that sit behind an app and make it work.",
-      "tr": "İzmir Ekonomi Üniversitesi mezunu bir yazılım mühendisiyim. Backend mühendisliğine odaklanıyorum: bir uygulamanın arkasında yer alan ve onu çalıştıran sunucular, veritabanları ve API'ler."
+      "tr": "İzmir Ekonomi Üniversitesi Yazılım Mühendisliği bölümünden mezun bir yazılım mühendisiyim. Backend geliştirme alanına odaklanıyorum. Uygulamaların temelinde yer alan sunucular, veritabanları ve API'ler üzerinde çalışıyorum."
     },
     {
       "en": "I learn best by understanding how things work underneath. When I use a new protocol, database, or tool, I study its internals so I can make sound design choices and track down problems faster.",
-      "tr": "En iyi, işlerin altta nasıl çalıştığını anlayarak öğreniyorum. Yeni bir protokol, veritabanı veya araç kullandığımda iç yapısını incelerim; böylece daha sağlam tasarım kararları alır, sorunları daha hızlı bulurum."
+      "tr": "Bir teknolojiyi en iyi, çalışma prensiplerini ve iç yapısını anlayarak öğreniyorum. Yeni bir protokol, veritabanı veya araçla çalışırken perde arkasında nasıl işlediğini inceliyorum. Böylece daha doğru tasarım kararları alabiliyor ve sorunların kaynağını daha hızlı tespit edebiliyorum."
     }
   ],
   "exploring": {
     "intro": {
       "en": "Outside my day-to-day backend work, I study how computers work under the hood. It makes me a better engineer at every level of the stack. Each topic has a plain-language summary, with the technical detail underneath.",
-      "tr": "Günlük backend işlerimin dışında, bilgisayarların kaputun altında nasıl çalıştığını inceliyorum. Bu, yazılım yığınının her katmanında beni daha iyi bir mühendis yapıyor. Her konunun altında önce sade bir özet, ardından teknik ayrıntı var."
+      "tr": "Günlük backend çalışmalarımın yanı sıra bilgisayarların donanım ve yazılım düzeyinde nasıl çalıştığını inceliyorum. Bu konuları anlamanın, teknoloji yığınının her katmanında daha yetkin bir mühendis olmama katkı sağladığına inanıyorum. Her konu için önce sade bir açıklama, ardından teknik ayrıntılar sunuyorum."
     },
     "topics": [
       {
         "badge": "MEM",
         "title": {
           "en": "Memory management & allocators",
-          "tr": "Bellek yönetimi ve ayırıcılar"
+          "tr": "Bellek Yönetimi ve Bellek Ayırıcıları"
         },
         "plain": {
           "en": "How a program asks the computer for memory, and how to do it faster and with less waste.",
-          "tr": "Bir programın bilgisayardan nasıl bellek istediği ve bunu nasıl daha hızlı, daha az israfla yapabileceği."
+          "tr": "Programların sistemden nasıl bellek talep ettiğini ve bu sürecin daha hızlı, daha verimli ve daha az kaynak tüketerek nasıl gerçekleştirilebileceğini inceliyorum."
         },
         "tech": {
           "en": "Low-overhead memory routines to improve execution speed.",
-          "tr": "Çalışma hızını artırmak için düşük maliyetli bellek yönetimi rutinleri."
+          "tr": "Çalışma performansını artırmak için düşük ek yüke sahip bellek yönetimi rutinleri."
         },
         "tags": [
           "Custom allocators",
@@ -84,15 +84,15 @@
         "badge": "NET",
         "title": {
           "en": "Network programming with raw sockets",
-          "tr": "Ham soketlerle ağ programlama"
+          "tr": "Ham Soketlerle Ağ Programlama"
         },
         "plain": {
           "en": "How computers send data to each other, one level below what web frameworks hide.",
-          "tr": "Bilgisayarların birbirine veriyi nasıl gönderdiği; web çerçevelerinin gizlediği katmanın bir altı."
+          "tr": "Web framework'lerinin soyutladığı katmanın altına inerek bilgisayarların ağ üzerinden birbirleriyle nasıl iletişim kurduğunu inceliyorum."
         },
         "tech": {
           "en": "Custom communication channels built directly on network protocols, aiming for low latency.",
-          "tr": "Ağ protokolleri üzerine doğrudan kurulan, düşük gecikmeyi hedefleyen özel iletişim kanalları."
+          "tr": "Düşük gecikme hedefiyle ağ protokolleri üzerinde doğrudan oluşturulan özel iletişim mekanizmaları."
         },
         "tags": [
           "POSIX sockets",
@@ -104,15 +104,15 @@
         "badge": "VM",
         "title": {
           "en": "Virtual machines & emulator internals",
-          "tr": "Sanal makineler ve emülatör iç yapısı"
+          "tr": "Sanal Makineler ve Emülatörlerin İç Yapısı"
         },
         "plain": {
           "en": "How software can imitate a computer by running a program’s instructions one at a time.",
-          "tr": "Bir yazılımın, bir programın komutlarını tek tek çalıştırarak bilgisayarı nasıl taklit edebildiği."
+          "tr": "Bir yazılımın, program komutlarını sırayla işleyerek bir bilgisayarın çalışma biçimini nasıl taklit edebildiğini inceliyorum."
         },
         "tech": {
           "en": "How instruction sets, compilers, and execution loops work at the hardware boundary.",
-          "tr": "Komut setlerinin, derleyicilerin ve çalıştırma döngülerinin donanım sınırında nasıl çalıştığı."
+          "tr": "Komut setlerinin, derleyicilerin ve komut yürütme döngülerinin donanımla etkileşim düzeyinde nasıl çalıştığı."
         },
         "tags": [
           "Bytecode loops",
@@ -124,15 +124,15 @@
         "badge": "HW",
         "title": {
           "en": "Embedded & bare-metal systems",
-          "tr": "Gömülü ve bare-metal sistemler"
+          "tr": "Gömülü Sistemler ve Bare-Metal Programlama"
         },
         "plain": {
           "en": "Writing software for small devices with very little memory and power.",
-          "tr": "Çok az bellek ve güce sahip küçük cihazlar için yazılım geliştirmek."
+          "tr": "Sınırlı bellek ve işlem gücüne sahip küçük cihazlar için yazılım geliştirmeyi inceliyorum."
         },
         "tech": {
           "en": "Software close to the hardware, under strict memory and processing limits.",
-          "tr": "Sıkı bellek ve işlemci sınırları altında donanıma yakın yazılım."
+          "tr": "Katı bellek ve işlemci kısıtlamaları altında, donanıma doğrudan yakın çalışan yazılımlar."
         },
         "tags": [
           "Microcontrollers",
@@ -145,13 +145,13 @@
   "stack": {
     "intro": {
       "en": "The tools I use to build software. Highlighted ones are the ones I use most; the rest I am familiar with.",
-      "tr": "Yazılım geliştirirken kullandığım araçlar. Vurgulananlar en çok kullandıklarım; diğerlerine aşinayım."
+      "tr": "Yazılım geliştirirken kullandığım teknolojiler ve araçlar. Öne çıkarılanlar en sık kullandıklarım, diğerleri ise aşina olduğum teknolojilerdir."
     },
     "groups": [
       {
         "category": {
           "en": "Languages",
-          "tr": "Diller"
+          "tr": "Programlama Dilleri"
         },
         "icon": "{ }",
         "items": [
@@ -184,7 +184,7 @@
       {
         "category": {
           "en": "Backend & Database",
-          "tr": "Backend ve Database"
+          "tr": "Backend ve Veritabanı Teknolojileri"
         },
         "icon": "DATA",
         "items": [
@@ -215,7 +215,7 @@
       {
         "category": {
           "en": "Systems & Tools",
-          "tr": "Sistemler ve Araçlar"
+          "tr": "Sistemler ve Geliştirme Araçları"
         },
         "icon": "SYS",
         "items": [
@@ -251,7 +251,7 @@
     },
     "description": {
       "en": "Barış Özdemir, a junior backend and systems engineer in İzmir, Türkiye. TypeScript, C, Python and Rust. See projects.",
-      "tr": "Barış Özdemir, İzmir'de junior backend ve sistem mühendisi. TypeScript, C, Python ve Rust. Projeleri inceleyin."
+      "tr": "İzmir'de yaşayan Junior Backend ve Sistem Mühendisi Barış Özdemir. TypeScript, C, Python ve Rust ile geliştirdiğim projeleri keşfedin."
     }
   }
 }
