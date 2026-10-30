@@ -1,0 +1,5 @@
+node_modules
+dist
+.DS_Store
+# generated from your GitHub account by scripts/fetch-pinned.mjs
+src/data/pinned.json

@@ -1,0 +1,257 @@
+{
+  "name": "Barış Özdemir",
+  "github": "0xbarss",
+  "role": {
+    "en": "Junior Software Engineer | Backend and Systems",
+    "tr": "Junior Yazılım Mühendisi | Backend ve Sistem"
+  },
+  "headline": {
+    "en": "I build the behind-the-scenes software that apps rely on: servers, databases, and fast data processing.",
+    "tr": "Uygulamaların arkasında çalışan yazılımları geliştiriyorum: sunucular, veritabanları ve hızlı veri işleme."
+  },
+  "summary": {
+    "en": "Languages: TypeScript, C, Python, Rust. Focus: backend services, data processing, and systems programming.",
+    "tr": "Diller: TypeScript, C, Python, Rust. Odak: backend servisleri, veri işleme ve sistem programlama."
+  },
+  "openTo": {
+    "en": "Junior Backend and Systems Engineer roles",
+    "tr": "Junior Backend ve Sistem Mühendisliği pozisyonları"
+  },
+  "location": "İzmir, Türkiye",
+  "workMode": {
+    "en": "Remote, hybrid, or on-site",
+    "tr": "Uzaktan, hibrit veya ofisten"
+  },
+  "availability": {
+    "en": "",
+    "tr": ""
+  },
+  "relocation": {
+    "en": "",
+    "tr": ""
+  },
+  "english": {
+    "en": "",
+    "tr": ""
+  },
+  "contact": {
+    "email": "baris.ozdemir.se@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/-barisozdemir-/"
+  },
+  "education": {
+    "school": "İzmir University of Economics",
+    "degree": "B.Sc. in Software Engineering",
+    "graduated": "2026"
+  },
+  "primaryLanguages": "TypeScript, C, Python, Rust",
+  "about": [
+    {
+      "en": "I am a software engineer and a graduate of İzmir University of Economics. I focus on backend engineering: the servers, databases, and APIs that sit behind an app and make it work.",
+      "tr": "İzmir Ekonomi Üniversitesi mezunu bir yazılım mühendisiyim. Backend mühendisliğine odaklanıyorum: bir uygulamanın arkasında yer alan ve onu çalıştıran sunucular, veritabanları ve API'ler."
+    },
+    {
+      "en": "I learn best by understanding how things work underneath. When I use a new protocol, database, or tool, I study its internals so I can make sound design choices and track down problems faster.",
+      "tr": "En iyi, işlerin altta nasıl çalıştığını anlayarak öğreniyorum. Yeni bir protokol, veritabanı veya araç kullandığımda iç yapısını incelerim; böylece daha sağlam tasarım kararları alır, sorunları daha hızlı bulurum."
+    }
+  ],
+  "exploring": {
+    "intro": {
+      "en": "Outside my day-to-day backend work, I study how computers work under the hood. It makes me a better engineer at every level of the stack. Each topic has a plain-language summary, with the technical detail underneath.",
+      "tr": "Günlük backend işlerimin dışında, bilgisayarların kaputun altında nasıl çalıştığını inceliyorum. Bu, yazılım yığınının her katmanında beni daha iyi bir mühendis yapıyor. Her konunun altında önce sade bir özet, ardından teknik ayrıntı var."
+    },
+    "topics": [
+      {
+        "badge": "MEM",
+        "title": {
+          "en": "Memory management & allocators",
+          "tr": "Bellek yönetimi ve ayırıcılar"
+        },
+        "plain": {
+          "en": "How a program asks the computer for memory, and how to do it faster and with less waste.",
+          "tr": "Bir programın bilgisayardan nasıl bellek istediği ve bunu nasıl daha hızlı, daha az israfla yapabileceği."
+        },
+        "tech": {
+          "en": "Low-overhead memory routines to improve execution speed.",
+          "tr": "Çalışma hızını artırmak için düşük maliyetli bellek yönetimi rutinleri."
+        },
+        "tags": [
+          "Custom allocators",
+          "Cache alignment",
+          "Zero-copy"
+        ]
+      },
+      {
+        "badge": "NET",
+        "title": {
+          "en": "Network programming with raw sockets",
+          "tr": "Ham soketlerle ağ programlama"
+        },
+        "plain": {
+          "en": "How computers send data to each other, one level below what web frameworks hide.",
+          "tr": "Bilgisayarların birbirine veriyi nasıl gönderdiği; web çerçevelerinin gizlediği katmanın bir altı."
+        },
+        "tech": {
+          "en": "Custom communication channels built directly on network protocols, aiming for low latency.",
+          "tr": "Ağ protokolleri üzerine doğrudan kurulan, düşük gecikmeyi hedefleyen özel iletişim kanalları."
+        },
+        "tags": [
+          "POSIX sockets",
+          "TCP / UDP",
+          "Low latency"
+        ]
+      },
+      {
+        "badge": "VM",
+        "title": {
+          "en": "Virtual machines & emulator internals",
+          "tr": "Sanal makineler ve emülatör iç yapısı"
+        },
+        "plain": {
+          "en": "How software can imitate a computer by running a program’s instructions one at a time.",
+          "tr": "Bir yazılımın, bir programın komutlarını tek tek çalıştırarak bilgisayarı nasıl taklit edebildiği."
+        },
+        "tech": {
+          "en": "How instruction sets, compilers, and execution loops work at the hardware boundary.",
+          "tr": "Komut setlerinin, derleyicilerin ve çalıştırma döngülerinin donanım sınırında nasıl çalıştığı."
+        },
+        "tags": [
+          "Bytecode loops",
+          "Register state",
+          "Dispatch tables"
+        ]
+      },
+      {
+        "badge": "HW",
+        "title": {
+          "en": "Embedded & bare-metal systems",
+          "tr": "Gömülü ve bare-metal sistemler"
+        },
+        "plain": {
+          "en": "Writing software for small devices with very little memory and power.",
+          "tr": "Çok az bellek ve güce sahip küçük cihazlar için yazılım geliştirmek."
+        },
+        "tech": {
+          "en": "Software close to the hardware, under strict memory and processing limits.",
+          "tr": "Sıkı bellek ve işlemci sınırları altında donanıma yakın yazılım."
+        },
+        "tags": [
+          "Microcontrollers",
+          "Memory-mapped I/O",
+          "Low power"
+        ]
+      }
+    ]
+  },
+  "stack": {
+    "intro": {
+      "en": "The tools I use to build software. Highlighted ones are the ones I use most; the rest I am familiar with.",
+      "tr": "Yazılım geliştirirken kullandığım araçlar. Vurgulananlar en çok kullandıklarım; diğerlerine aşinayım."
+    },
+    "groups": [
+      {
+        "category": {
+          "en": "Languages",
+          "tr": "Diller"
+        },
+        "icon": "{ }",
+        "items": [
+          {
+            "name": "TypeScript",
+            "core": true,
+            "dot": "#3178c6"
+          },
+          {
+            "name": "C",
+            "core": true,
+            "dot": "#555555"
+          },
+          {
+            "name": "Python",
+            "core": true,
+            "dot": "#3572A5"
+          },
+          {
+            "name": "Rust",
+            "core": false,
+            "dot": "#ce412b"
+          },
+          {
+            "name": "Java",
+            "dot": "#b07219"
+          }
+        ]
+      },
+      {
+        "category": {
+          "en": "Backend & Database",
+          "tr": "Backend ve Database"
+        },
+        "icon": "DATA",
+        "items": [
+          {
+            "name": "Node.js",
+            "core": true,
+            "dot": "#339933"
+          },
+          {
+            "name": "PostgreSQL",
+            "core": true,
+            "dot": "#4169E1"
+          },
+          {
+            "name": "MySQL",
+            "dot": "#4479A1"
+          },
+          {
+            "name": "SQLite",
+            "dot": "#003B57"
+          },
+          {
+            "name": "Firebase",
+            "dot": "#FFA611"
+          }
+        ]
+      },
+      {
+        "category": {
+          "en": "Systems & Tools",
+          "tr": "Sistemler ve Araçlar"
+        },
+        "icon": "SYS",
+        "items": [
+          {
+            "name": "Linux",
+            "dot": "#FCC624"
+          },
+          {
+            "name": "Bash",
+            "dot": "#4EAA25"
+          },
+          {
+            "name": "Git",
+            "dot": "#F05032"
+          },
+          {
+            "name": "GitHub",
+            "dot": "#18181b"
+          },
+          {
+            "name": "Postman",
+            "dot": "#FF6C37"
+          }
+        ]
+      }
+    ]
+  },
+  "site": {
+    "url": "https://0xbarss.github.io/portfolio/",
+    "title": {
+      "en": "Barış Özdemir | Junior Backend and Systems Engineer",
+      "tr": "Barış Özdemir | Junior Backend ve Sistem Mühendisi"
+    },
+    "description": {
+      "en": "Barış Özdemir, a junior backend and systems engineer in İzmir, Türkiye. TypeScript, C, Python and Rust. See projects.",
+      "tr": "Barış Özdemir, İzmir'de junior backend ve sistem mühendisi. TypeScript, C, Python ve Rust. Projeleri inceleyin."
+    }
+  }
+}
