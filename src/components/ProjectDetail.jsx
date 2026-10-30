@@ -12,7 +12,7 @@ const readmeCache = new Map()
 
 export default function ProjectDetail({ project, onBack, onSelectProject, allProjects = [] }) {
   const { t, l } = useLang()
-  const txt = { description: l(project.description), built: l(project.built), technical: l(project.technical) }
+  const txt = { description: l(project.description), built: project.built?.map(l), technical: l(project.technical) }
   const { owner, repo } = parseOwnerRepo(project.url)
   const branch = project.branch || 'main'
   const cacheKey = `${owner}/${repo}`

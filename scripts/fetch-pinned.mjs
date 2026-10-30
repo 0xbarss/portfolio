@@ -121,7 +121,10 @@ try {
 // Text is stored as { en, tr } pairs, like personal.json. The manifest's own
 // tagline/highlights are the English text; "translations": { "tr": {...} } is optional,
 // and Turkish falls back to the English text when it is missing.
-const pair = (en, tr) => ({ en, tr: tr ?? en })
+const pair = (en, tr) => {
+  if (en && typeof en === 'object' && !Array.isArray(en)) return en
+  return { en, tr: tr ?? en }
+}
 
 const projects = []
 for (const repo of repos) {
@@ -137,7 +140,7 @@ for (const repo of repos) {
     stack: repo.stack,
     description: pair(tagline || repo.description, tagline ? tr?.tagline : undefined),
     technical: tagline && repo.description ? pair(repo.description) : undefined,
-    built: Array.isArray(m?.highlights) ? pair(m.highlights, tr?.highlights) : undefined,
+    built: Array.isArray(m?.highlights) ? m.highlights : undefined,
     hasShowcase: Boolean(m),
   })
 }

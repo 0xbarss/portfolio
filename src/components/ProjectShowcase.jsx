@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { resolveMedia } from '../lib/github.js'
+import { useLang } from '../i18n/LangContext.jsx'
 
 function TextBlock({ body }) {
   return <p className="block-text">{body}</p>
@@ -201,6 +202,7 @@ function EmbedBlock({ url, label }) {
 }
 
 export default function ProjectShowcase({ manifest, ctx, onShowReadme }) {
+  const { l } = useLang()
   const [lightbox, setLightbox] = useState(null) // { images, index } | null
 
   const openLightbox = useCallback((images, index) => {
@@ -228,12 +230,12 @@ export default function ProjectShowcase({ manifest, ctx, onShowReadme }) {
         />
       )}
 
-      {manifest.tagline && <p className="showcase-tagline">{manifest.tagline}</p>}
+      {manifest.tagline && <p className="showcase-tagline">{l(manifest.tagline)}</p>}
 
       {manifest.highlights?.length > 0 && (
         <ul className="showcase-highlights">
-          {manifest.highlights.map((h) => (
-            <li key={h}>{h}</li>
+          {manifest.highlights.map((h, i) => (
+            <li key={i}>{l(h)}</li>
           ))}
         </ul>
       )}
@@ -241,9 +243,9 @@ export default function ProjectShowcase({ manifest, ctx, onShowReadme }) {
       {manifest.blocks?.map((block, i) => {
         switch (block.type) {
           case 'text':
-            return <TextBlock key={i} {...block} />
+            return <TextBlock key={i} body={l(block.body)} />
           case 'image':
-            return <ImageBlock key={i} {...block} ctx={ctx} />
+            return <ImageBlock key={i} {...block} caption={l(block.caption)} ctx={ctx} />
           case 'gallery':
             return (
               <GalleryBlock key={i} {...block} ctx={ctx} onOpen={openLightbox} />
@@ -251,7 +253,7 @@ export default function ProjectShowcase({ manifest, ctx, onShowReadme }) {
           case 'video':
             return <VideoBlock key={i} {...block} ctx={ctx} />
           case 'embed':
-            return <EmbedBlock key={i} {...block} />
+            return <EmbedBlock key={i} {...block} label={l(block.label)} />
           default:
             return null
         }
@@ -259,9 +261,9 @@ export default function ProjectShowcase({ manifest, ctx, onShowReadme }) {
 
       {manifest.links?.length > 0 && (
         <div className="showcase-links">
-          {manifest.links.map((l) => (
-            <a key={l.url} href={l.url} target="_blank" rel="noreferrer">
-              {l.label}
+          {manifest.links.map((link) => (
+            <a key={link.url} href={link.url} target="_blank" rel="noreferrer">
+              {l(link.label)}
             </a>
           ))}
         </div>
