@@ -2,20 +2,20 @@
   "name": "Barış Özdemir",
   "github": "0xbarss",
   "role": {
-    "en": "Junior Software Engineer | Backend and Systems",
-    "tr": "Junior Yazılım Mühendisi | Backend ve Sistem Programlama"
+    "en": "Backend & Systems Engineer",
+    "tr": "Backend ve Sistem Mühendisi"
   },
   "headline": {
-    "en": "I build the behind-the-scenes software that apps rely on: servers, databases, and fast data processing.",
-    "tr": "Uygulamaların temelinde çalışan yazılımları geliştiriyorum: sunucular, veritabanları ve yüksek performanslı veri işleme sistemleri."
+    "en": "I build backend services and embedded systems firmware, from REST APIs down to bare-metal STM32.",
+    "tr": "Backend servisleri ve gömülü sistem yazılımı geliştiriyorum, REST API'lerden bare-metal STM32'ye kadar."
   },
   "summary": {
-    "en": "Languages: TypeScript, C, Python, Rust. Focus: backend services, data processing, and systems programming.",
-    "tr": "Programlama dilleri: TypeScript, C, Python, Rust. Odak alanlarım: Backend servisleri, veri işleme ve sistem programlama."
+    "en": "Languages: C, TypeScript, Rust, Python. Focus: backend services, systems programming, and embedded firmware.",
+    "tr": "Programlama dilleri: C, TypeScript, Rust, Python. Odak: backend servisleri, sistem programlama ve gömülü yazılım."
   },
   "openTo": {
-    "en": "Junior Backend and Systems Engineer roles",
-    "tr": "Junior Backend ve Sistem Mühendisliği pozisyonlarına açığım."
+    "en": "Backend and Systems Engineer roles",
+    "tr": "Backend ve Sistem Mühendisliği"
   },
   "location": "İzmir, Türkiye",
   "workMode": {
@@ -23,16 +23,16 @@
     "tr": "Uzaktan, hibrit veya ofisten çalışma"
   },
   "availability": {
-    "en": "",
-    "tr": ""
+    "en": "Ready for roles",
+    "tr": "Pozisyonlara açığım"
   },
   "relocation": {
-    "en": "",
-    "tr": ""
+    "en": "Open to relocation",
+    "tr": "Yer değişikliğine açığım"
   },
   "english": {
-    "en": "",
-    "tr": ""
+    "en": "B2 Professional",
+    "tr": "B2 Profesyonel"
   },
   "contact": {
     "email": "baris.ozdemir.se@gmail.com",
@@ -166,18 +166,14 @@
             "dot": "#555555"
           },
           {
-            "name": "Python",
-            "core": true,
-            "dot": "#3572A5"
-          },
-          {
             "name": "Rust",
-            "core": false,
+            "core": true,
             "dot": "#ce412b"
           },
           {
-            "name": "Java",
-            "dot": "#b07219"
+            "name": "Python",
+            "core": false,
+            "dot": "#3572A5"
           }
         ]
       },
@@ -194,13 +190,24 @@
             "dot": "#339933"
           },
           {
+            "name": "Fastify",
+            "core": true,
+            "dot": "#000000"
+          },
+          {
             "name": "PostgreSQL",
             "core": true,
             "dot": "#4169E1"
           },
           {
-            "name": "MySQL",
-            "dot": "#4479A1"
+            "name": "Redis",
+            "core": false,
+            "dot": "#DC382D"
+          },
+          {
+            "name": "Docker",
+            "core": false,
+            "dot": "#2496ED"
           },
           {
             "name": "SQLite",
@@ -221,7 +228,17 @@
         "items": [
           {
             "name": "Linux",
+            "core": true,
             "dot": "#FCC624"
+          },
+          {
+            "name": "STM32",
+            "core": true,
+            "dot": "#03234B"
+          },
+          {
+            "name": "CMake",
+            "dot": "#064F8C"
           },
           {
             "name": "Bash",
@@ -230,10 +247,6 @@
           {
             "name": "Git",
             "dot": "#F05032"
-          },
-          {
-            "name": "GitHub",
-            "dot": "#18181b"
           },
           {
             "name": "Postman",
@@ -246,12 +259,12 @@
   "site": {
     "url": "https://0xbarss.github.io/portfolio/",
     "title": {
-      "en": "Barış Özdemir | Junior Backend and Systems Engineer",
-      "tr": "Barış Özdemir | Junior Backend ve Sistem Mühendisi"
+      "en": "Barış Özdemir | Backend & Systems Engineer",
+      "tr": "Barış Özdemir | Backend ve Sistem Mühendisi"
     },
     "description": {
-      "en": "Barış Özdemir, a junior backend and systems engineer in İzmir, Türkiye. TypeScript, C, Python and Rust. See projects.",
-      "tr": "İzmir'de yaşayan Junior Backend ve Sistem Mühendisi Barış Özdemir. TypeScript, C, Python ve Rust ile geliştirdiğim projeleri keşfedin."
+      "en": "Barış Özdemir, a backend and systems engineer in İzmir, Türkiye. TypeScript, C, Python and Rust. See projects.",
+      "tr": "İzmir'de yaşayan Backend ve Sistem Mühendisi Barış Özdemir. TypeScript, C, Python ve Rust ile geliştirdiğim projeleri keşfedin."
     }
   }
 }
